@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Accenture_one
+{
+	static int get(int n,int[] array)
+	{
+		int f1=0,f2=0;
+		for(int i=0;i<n;i++)
+		{
+			int num = array[i];
+			while(num>0)
+			{
+				f1 = f1 + num%10;
+				num = num / 10;
+			}
+			f2 = f2 + array[i];
+		}
+		int f = f1%10 - f2%10;
+		return f;
+	}
+
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] array = new int[n];
+		for(int i=0;i<n;i++)
+			array[i] = sc.nextInt();
+		System.out.print(get(n,array));
+	}
+}
+
